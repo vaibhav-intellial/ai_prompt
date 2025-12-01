@@ -72,6 +72,10 @@ def compare_boms(request):
             master_data_for_db = master_data_df.to_dict('records')
             user_data_for_db = user_data_df.to_dict('records')
 
+            # Ensure full sanitization of lists of dicts
+            master_data_for_db = [sanitize_json(record) for record in master_data_for_db]
+            user_data_for_db = [sanitize_json(record) for record in user_data_for_db]
+            
             # 🔥 MOST IMPORTANT FIX → sanitize comparison_result
             comparison_result_for_db = sanitize_json(comparison_result_dict)
 
