@@ -1,0 +1,4 @@
+MPN,Quantity,"Reference Designator (Ref Des)",Description
+C001,12,C1,Capacitor
+R001,20,R1,Resistor
+D001,5,D1,Diode
